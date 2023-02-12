@@ -1,7 +1,47 @@
-img {
-    width: 500px;
-    margin: 10px 512px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
 }
+
+header {
+    background-color: lightgray;
+    height: 50px;
+}
+
+nav {
+    -border: 5px dotted black;
+    -width: mix-content;
+    height: inherit;
+    display: flex;
+    -justify-content: space-between;
+    /*ростояние между ними*/
+    -justify-content: space-around;
+    /*ростояние по всей длине */
+    -justify-content: space-evenly;
+    /*виравнивающее свойство растояние будет одинаково */
+    align-items: center;
+}
+
+nav>a {
+    text-decoration: none;
+    /*убирает подчеркивание у сиилок*/
+    color: black;
+    padding: 0 30px;
+    font-size: 20px;
+}
+
+.about_us {
+    display: flex;
+    -flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.about_us img {
+    width: 300px;
+}
+
+
 
 span {
     font-size: 20px;
