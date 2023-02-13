@@ -66,3 +66,11 @@ h1 {
 h2 {
     text-align: center;
 }
+
+.my_game {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+}

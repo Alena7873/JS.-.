@@ -77,19 +77,110 @@
 // console.log(array[0]) // масив[]
 // //console.log(obj)
 
-const asa = "342" + 12
-console.log(asa)
+//const variant = "option1"
+///урок 3 
+//console.log(5 == "5")
+//console.log(5 == ="5")
+
+//console.log("a" > 15)
+
+//console.log(null = 0)
+
+// typeof +"abc"
+// typeof (15)  число 15
+// число и сторочка + привращает в строку  15 + " " будет 15 folse
+// boolean(0) folse
+// ! буквальное отрицание логического типа  !"" tru !"dfdf" folse !!"tyt" tru
+
+// confirm  да или нет  false    prompt возвращает страку
+// пример 1
+// const userName = prompt(" whto you are", "anonim ")
+// if (userName === "admin") {
+//     alert("Hello boss")
+// } else if (userName === "anonim" || !userName) {
+//     alert("I don't khow you..")
+// }
+// // else if (!userNamel) {
+// //     alert("You does not exist")
+// // }
+// else {
+//     alert(`Hi ${userName}`)
+// }
+
+// 2222222222222222222222
+//пока условия верни счетчик while
+
+//const counts = prompt("До скольких ви хотите достичь", 10)
+// let i = 0
+// while (i <= counst) {
+//     console.log(i++)
+// }
 
 
 
+// do {
+//     console.log(i++)
+// } while (i <= counst)
+// console.log(i)
+
+// пример масив чисел от 1-50
+
+// let arr = [4, 5, 6]
+// arr.push(7)
+// console.log(arr)
+
+// const arr = []
+// for (let i = 1; i <= 50; ++i) {
+//     arr.push(i)
 
 
+// console.log(arr)
+// arr[17] = "jkjkjkj"
+// console.log(arr)
+
+// вивести все что делиться на 7
+
+//7%3  6%3 elem какойто елемент масива arr сослался на масив
 
 
+// for (elem of arr) {
+//     console.log(elem)
+// }
 
 
+// const newArr = []
+
+// for (elem of arr) {
+//     const marker = elem % 3
+//     if (!marker) {
+//         newArr.push(elem)
+//     }
+// } console.log(newArr)
 
 
+// пример
+
+// const obj = {
+//     name: "sasha",
+//     are: 25,
+//     city: "Pereyaslav"
+// }
+// for (key in obj) {
+//     console.log(key, obj[key])
+// }
+//видает случайное значение от 0 -1 
+
+const randomValue1 = (Math.random() * 100).toFixed(0)
+const randomValue2 = (Math.random() * 100).toFixed(0)
+const isPlus = Math.random() > 0.5
+console.log(randomValue1)
+
+const gamelements = document.getElementById("my_game").children
+if (isPlus) {
+    gamelements[1].innertext = '${randomValue1} + ${randomValue2}'
+}
+
+console.log(gamelements)
 
 
 
