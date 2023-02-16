@@ -169,19 +169,80 @@
 //     console.log(key, obj[key])
 // }
 //видает случайное значение от 0 -1 
+// functional
 
-const randomValue1 = (Math.random() * 100).toFixed(0)
-const randomValue2 = (Math.random() * 100).toFixed(0)
-const isPlus = Math.random() > 0.5
-console.log(randomValue1)
+// //declaration
+// function scream(a, b) {
+//     // const resumn = a * b
+//     // return result
+//     return a * b
+// }
+// const wowScream = function () {
+//     alert("WOOOOW")
+// }
+// scream(15, 10)
 
-const gamelements = document.getElementById("my_game").children
-if (isPlus) {
-    gamelements[1].innertext = '${randomValue1} + ${randomValue2}'
+// //arrow
+// const arrow = () => {
+//     alert("WOOOOW")
+// }
+
+// wowScream()
+
+// Igra
+// нажав на кнопку начать игра запускаеться генерируеться задача 
+//пользователь может ввести ответ должна появиться кнопка проверить
+
+// нажав кнопку проверить ми сравнивим с ответом
+// ми должни вивести результат и правильное значение сменить кнопку на начать заново
+//
+
+const getrandonNumInRange = (min, max) => {
+    const randomNum = (Math.random() * (max - min) + min).toFixed(0)
+    return randomNum
 }
 
-console.log(gamelements)
+// дай задачу
+const getTask = () => {
+    const randomNum1 = getrandonNumInRange(0, 100)
+    const randomNum2 = getrandonNumInRange(0, 100)
+    let Symbol
+    if (Math.randon(). 0.5) {
+        symbol = "+"
+    } else {
+        symbol = "-"
+    }
+}
+const isPlus = Math.randon() > 0.5
+const task = `${andomNum1}  ${symbo} ${randomNum2}`
 
+const gameElements = document.getElementById("my_game").children
+//console.log(gameElements)
+const title = gameElements[0]
+const titleTask = gameElements[1]
+const titleAnswer = gameElements[2]
+const btnGame = gameElements[3]
+
+const gamestate = {
+    taskInProcess: false,
+    rightAnswer: null,
+}
+
+btnGame.onclick = () => {
+    if (!gamestate.taskInProcess) {
+        // генирируем задачу и ответ
+        //показиваем задачу пользователю
+        //меняю кнопку и состояние
+    } else {
+
+    }
+}
+
+// if (isPlus) {
+//     gamelements[1].innertext = '${randomValue1} + ${randomValue2}'
+// }
+
+// console.log(gamelements)
 
 
 
