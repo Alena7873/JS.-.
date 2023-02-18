@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2? family= Comfortaa:wght@300;400;500;600;700 & display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: 0;
+    font-family: 'Comfortaa', cursive;
 }
 
 header {
@@ -35,42 +38,61 @@ nav>a {
     display: flex;
     -flex-direction: row-reverse;
     justify-content: center;
+    flex-direction: column;
+    object-position: center;
+    object-fit: cover;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.about_us-description {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.about_us-description * {
+    padding: 5px;
 }
 
 .about_us img {
     width: 300px;
-}
-
-
-
-span {
-    font-size: 20px;
-}
-
-.name {
-    color: red;
-}
-
-#skill {
-    color: green;
-}
-
-h1 {
-    -border: 3px solid grey;
-    padding: 0;
-    margin: 30px;
-    text-align: center;
-    line-height: 40px;
-}
-
-h2 {
-    text-align: center;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .my_game {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     max-width: 300px;
     margin: 0 auto;
-    padding: 20px;
+
+}
+
+.my_game>* {
+    text-align: center;
+
+}
+
+.my_game input,
+.my_game button {
+    border: none;
+    margin: 5px;
+    min-height: 30px;
+}
+
+.my_game button {
+    width: max-content;
+    background-color: lightseagreen;
+    padding: 0 10px;
+    border-radius: 5px;
+
+}
+
+.my_game input {
+    background-color: lightgrey;
+    outline: none;
 }

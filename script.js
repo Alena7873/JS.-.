@@ -169,80 +169,133 @@
 //     console.log(key, obj[key])
 // }
 //видает случайное значение от 0 -1 
-// functional
+// Functional
 
 // //declaration
-// function scream(a, b) {
-//     // const resumn = a * b
-//     // return result
+//пример 1  // return если ми не указали то она возвращает undefined
+// если ми хотим от функции что то получить нужно указать return  
+// scream() ми хотим чтоби функциия умножала числа
+
+
+
+// function scream() {
+//     alert("AAAAAAAAAA")
+//     return "I am Ok"
+
+// }
+// //console.log(scream1(15, 10))
+// function scream1(a, b) {
+//     //   const result1 = a * b
+//     //     return result1
+//     // или можно записать
 //     return a * b
 // }
+// // какие числа ми должни умножать
+// //console.log(scream1(15, 10))
+// //scream()
+// //wowScream()
+// //console.log(scream())
 // const wowScream = function () {
 //     alert("WOOOOW")
 // }
-// scream(15, 10)
+// //wowScream()
+// //console.log(wowScream())
+// // arrow  стрелочная функция
 
-// //arrow
 // const arrow = () => {
-//     alert("WOOOOW")
+//     alert("arrow is in the sky")
 // }
-
-// wowScream()
+//arrow()
 
 // Igra
-// нажав на кнопку начать игра запускаеться генерируеться задача 
+// нажав на кнопку начать игра запускаеться генерируеться задача
 //пользователь может ввести ответ должна появиться кнопка проверить
 
-// нажав кнопку проверить ми сравнивим с ответом
+// нажав кнопку проверить ми сравнивим ввод пользователя с ответом
 // ми должни вивести результат и правильное значение сменить кнопку на начать заново
 //
 
-const getrandonNumInRange = (min, max) => {
+const getRandomNumInRange = (min, max) => {
     const randomNum = (Math.random() * (max - min) + min).toFixed(0)
     return randomNum
 }
-
-// дай задачу
+//  дай задачу
 const getTask = () => {
-    const randomNum1 = getrandonNumInRange(0, 100)
-    const randomNum2 = getrandonNumInRange(0, 100)
-    let Symbol
-    if (Math.randon(). 0.5) {
-        symbol = "+"
-    } else {
-        symbol = "-"
-    }
+    //const randomNum1 = getRandomNumInRange(0, 100)
+    // const randomNum2 = getRandomNumInRange(0, 100)
+    //     let symbol
+    //     if (Math.randon() > 0.5) {
+    //         symbol = "+"
+    //     } else {
+    //         symbol = "-"
+    //     }
+    //}
+    // пример 2 тоже самое что више но подругому запись 
+
+    const symbol = (Math.random() > 0.5) ? "+" : "-"
+
+    //const task = `${randomNum1} ${symbol} ${randomNum2}`  //  1 вариант 
+    // 2 вариант
+    const task = `${getRandomNumInRange(0, 100)} ${symbol} ${getRandomNumInRange(0, 100)}`
+    gameState.rightAnswer = eval(task)
+    return task
 }
-const isPlus = Math.randon() > 0.5
-const task = `${andomNum1}  ${symbo} ${randomNum2}`
+
+// const task = `${andomNum1}  ${symbo} ${randomNum2}`
+
+const toggLegameState = () => {
+    gameState.taskInProcess = !gameState.taskInProcess
+
+
+}
 
 const gameElements = document.getElementById("my_game").children
-//console.log(gameElements)
+//console.log(gameElements) 
 const title = gameElements[0]
-const titleTask = gameElements[1]
-const titleAnswer = gameElements[2]
+const userTask = gameElements[1]
+const userAnswer = gameElements[2]
 const btnGame = gameElements[3]
 
-const gamestate = {
-    taskInProcess: false,
-    rightAnswer: null,
+const gameState = {
+    taskInProcess: false,        // он покамисть не видит задачу  // решает пользователь задачу или нет
+    rightAnswer: null,                 // правильний ответ 
 }
 
 btnGame.onclick = () => {
-    if (!gamestate.taskInProcess) {
-        // генирируем задачу и ответ
-        //показиваем задачу пользователю
-        //меняю кнопку и состояние
+    if (!gameState.taskInProcess) {
+        title.innerText = "Игра началась!"
+        // генирируем задачу и ответ  
+        //const task = getTask()
+        //показиваем задачу пользователю 
+        userAnswer.value = null
+        userTask.innerText = getTask()
+        userAnswer.hidden = false            // ответ пользователя
+        btnGame.innerText = "Проверить!"
+        toggLegameState()
+        //меняю кнопку // состояние
     } else {
-
+        // сравнить ответ пользователя проавильним
+        const isright = gameState.rightAnswer == userAnswer.value
+        // вивести результат
+        userTask.innerText = userTask.innerText + "=" + gameState.rightAnswer
+        // вивести поздравления
+        title.innerText = "Ви п" + ((isRight) ? "обедили!" : "роиграли!")
+        // поменять кнопку и состояние
+        btnGame.innerText = "Начать занаво"
+        toggLegameState()
     }
 }
 
-// if (isPlus) {
-//     gamelements[1].innertext = '${randomValue1} + ${randomValue2}'
-// }
+for (let i = 10; i < 35; i += 5) {
 
-// console.log(gamelements)
+    console.log(i);
+
+}
+
+
+
+
+
 
 
 
